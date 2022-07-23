@@ -1,0 +1,272 @@
+body{
+    margin: 0px;
+    font-family: sans-serif;
+    background-color: white;
+    color:rgb(55,53,48);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.hd-user>.user-image>img,.trending-img>img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.hd-actions>button{
+    background-color: rgb(59, 170, 245);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+}
+
+.hd-actions>button:hover{
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 150px 1fr 1fr 1fr / 200px 1fr 1fr 1fr;
+    grid-template-areas: 
+    "sidebar header header header"
+    "sidebar view view view"
+    "sidebar view view view"
+    "sidebar view view view";
+}
+
+
+.sb-nav>ul,.sb-config>ul{
+    font-size: 1.2rem;
+    padding: 0px;
+    list-style: none;
+    line-height: 2rem;
+    word-spacing: 0.5rem;
+}
+
+.sb-nav>ul>li:hover,.sb-config>ul>li:hover,.nav-selected,.trending-user:hover,.announce:hover,.hd-search>input:hover{
+    border-radius: 10px;
+    background-color: rgb(240, 237, 237);
+    cursor: pointer;
+}
+
+.header{
+    grid-area: header;
+    background-color: white;
+    padding: 20px;
+    display: grid;
+    grid-template: repeat(2,minmax(50px,1fr)) / minmax(350px,1fr) minmax(150px,300px);
+    grid-template-areas: 
+    "search user"
+    "greetings actions";
+}
+
+.header>.hd-search{
+    grid-area: search;
+}
+
+.hd-search>input{
+    background-color: rgb(232,231,228);
+}
+
+.hd-search>input::placeholder{
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.hd-search>input{
+    width: 80%;
+    height: 30px;
+    border-style: none;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.header>.hd-user{
+    grid-area: user;
+    font-weight: bolder;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header>.hd-greetings{
+    grid-area: greetings;
+}
+
+.hd-greetings>h2{
+    margin: 0px;
+}
+
+.header>.hd-actions{
+    grid-area: actions;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: rgb(247,246,243);
+    color:rgb(154, 159, 161);
+    display: grid;
+    grid-template-rows: 100px 250px 1fr;
+    grid-template-areas: 
+    "branding" 
+    "navigation"
+    "config";
+    padding: 20px;
+}
+
+.sidebar>.sb-branding{
+    grid-area: branding;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+.sb-nav,.sb-config{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar>.sb-nav{
+    grid-area: navigation;
+}
+
+.nav-selected{
+    background-color: rgb(232,231,228);
+    padding-left: 15px;
+}
+
+
+.sidebar>.sb-config{
+    grid-area: config;
+}
+
+.view{
+    grid-area: view;
+    padding: 20px;
+    display: grid;
+    grid-template: minmax(200px,1fr) minmax(200px,1fr) / minmax(350px,1fr) minmax(200px,300px);
+    grid-template-areas:
+    "projects announces"
+    "projects trending";
+}
+
+.view>.view-projects{
+    grid-area: projects;
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.view-title,.ticket-title,.announce>.announce-title{
+    width: 100%;
+    height: 25px;
+    font-weight: bold;
+    flex: 0 0 auto;
+}
+
+.card,.ticket{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.card-announces,.card-trending{
+    max-height: 400px;
+    overflow: auto;
+}
+
+@media (max-height:1080px) {
+    .card-announces,.card-trending{
+        max-height: 300px;
+    }
+    
+}
+
+.ticket{
+    width: 300px;
+    height: 200px;
+    margin:0px 15px 15px 0px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.ticket-title,.ticket-desc{
+    padding: 20px 5px 0px 20px;
+}
+
+.ticket-desc{
+    flex: 1 1 auto;
+}
+
+.ticket-actions{
+    align-self: flex-end;
+    margin: 20px;
+}
+
+.ticket-actions>button{
+    background-color: transparent;
+    border: 0px none;
+    font-size: 1.5rem;
+    margin-left: 5px;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-actions>button:not(:hover){
+    filter: grayscale();
+}
+
+.card{
+    flex: 1 0 auto;
+}
+
+.view>.view-announces{
+    grid-area: announces;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.card.card-announces>.announce{
+    margin: 20px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card.card-announces>.announce:last-child{
+    border-bottom: 0px none;
+}
+
+
+.view>.view-trending{
+    grid-area: trending;
+    display: flex;
+    flex-direction: column;
+}
+
+.card.card-trending>.trending-user{
+    margin: 20px;
+    padding-left:10px;
+    padding-top: 3px;
+    color: rgb(148, 148, 148);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.trending-user>.trending-username>span{
+    color: black;
+}
