@@ -39,6 +39,7 @@ button:hover{
     "sidebar view view view"
     "sidebar view view view"
     "sidebar view view view";
+    overflow: auto;
 }
 
 
@@ -157,7 +158,7 @@ button:hover{
     grid-area: view;
     padding: 20px;
     display: grid;
-    grid-template: minmax(200px,1fr) minmax(200px,1fr) / minmax(350px,1fr) minmax(200px,300px);
+    grid-template: minmax(200px,1fr) minmax(200px,1fr) / minmax(330px,1fr) 260px;
     grid-template-areas:
     "projects announces"
     "projects trending";
@@ -169,6 +170,7 @@ button:hover{
     flex: 0 0 auto;
     flex-wrap: wrap;
     align-content: flex-start;
+    overflow: auto;
 }
 
 .view-title,.ticket-title,.announce>.announce-title{
