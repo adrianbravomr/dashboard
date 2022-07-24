@@ -156,9 +156,9 @@ button:hover{
 
 .view{
     grid-area: view;
-    padding: 20px;
+    margin: 20px;
     display: grid;
-    grid-template: minmax(200px,1fr) minmax(200px,1fr) / minmax(310px,1fr) 280px;
+    grid-template: minmax(200px,1fr) minmax(200px,1fr) / minmax(330px,1fr) 270px;
     grid-template-areas:
     "projects announces"
     "projects trending";
@@ -193,7 +193,7 @@ button:hover{
 
 @media (max-height:1080px) {
     .card-announces,.card-trending{
-        max-height: 300px;
+        max-height: 280px;
     }
     
 }
@@ -216,7 +216,7 @@ button:hover{
 
 .ticket-actions{
     align-self: flex-end;
-    margin: 20px;
+    margin: 10px;
 }
 
 .ticket-actions>button{
@@ -243,7 +243,7 @@ button:hover{
 }
 
 .card.card-announces>.announce{
-    margin: 20px;
+    margin: 15px;
     padding: 5px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -260,7 +260,7 @@ button:hover{
 }
 
 .card.card-trending>.trending-user{
-    margin: 20px;
+    margin: 15px;
     padding-left:10px;
     padding-top: 3px;
     color: rgb(148, 148, 148);
